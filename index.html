@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+    #itemCatalogue img {
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+<h1>Welcome to the web shop</h1>
+
+<div id="itemCatalogue">
+</div>
+
+</body>
+<script>
+const items = [
+{ title: "Eple", price: 20, description: "Gode friske epler", image: "epler.jpg" },
+{ title: "Banan", price: 15, description: "Gule fine bananer", image: "banana.jpg"},
+{ title: "Appelsin", price: 25, description: "Saftige appelsiner", image: "orange.jpg"}
+];
+
+const itemCatalogueDiv = document.getElementById("itemCatalogue");
+
+for (item of items) {
+    const itemDiv = document.createElement("div");
+    const itemHeader = document.createElement("h4");
+    itemHeader.innerHTML = item.title;
+    itemDiv.appendChild(itemHeader);
+    const description = document.createElement("p");
+    description.innerHTML = item.description;
+    itemDiv.appendChild(description);
+    const image = document.createElement("img");
+    image.setAttribute("src", item.image);
+    itemDiv.appendChild(image);
+    itemCatalogueDiv.appendChild(itemDiv);
+}
+
+</script>
+</html>
